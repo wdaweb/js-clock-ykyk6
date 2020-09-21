@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background:rgb(14, 24, 44) ;
+        }
+        #ten{
+    border-radius: 48%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(20deg);
+    position: absolute;
+    background: green;
+    margin: auto;
+    height: 15px;
+    width: 15px;
+    z-index: 20;
+        }
+		
+		 #ten2{
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) ;
+    position: absolute;
+    background: white;
+    margin: auto;
+    height: 5px;
+    width: 5px;
+    z-index: 30;
+        }
+		
+		
+		
+        #clock0{
+			
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: rgb(14, 24, 44);
+            position: relative;
+            margin: auto;
+
+        }
+
+        #hour{
+    position: absolute;
+    top: 50%;
+    width: 20%;
+    height: 3px;
+    background: rgb(255, 255, 255);
+    transform-origin: right center;
+    transform: rotate(0deg);
+    left: 30%;
+	text-shadow: 0 20px 20% 10%	black;
+    border-radius: 2px;
+        }
+
+
+        hour::after{
+			content: "★";
+			color: black;
+			display: inline-block;
+			font-size: 28px;
+			position: relative;
+			right: 5px;
+			top: -15px;
+			transform:rotate(120deg);}
+
+        #minute{
+    position: absolute;
+    top: 50%;
+    width: 32%;
+    height: 3px;
+    background: rgb(255, 233, 109);
+    transform-origin: right center;
+    transform: rotate(0deg);
+    left: 18%;
+    border-radius: 2px;
+	text-shadow: 0 10px 20% 10% black;
+   }
+		
+/*
+		 #minute::after{
+			content: "☆";
+			color: black;
+			display: inline-block;
+			font-size: 28px;
+			position: relative;
+			right: 30%;
+			transform:rotate(120deg);
+			 z-index: 25;
+		
+	}
+*/
+		
+     #second{
+    position: absolute;
+    top: 50%;
+    width: 42%;
+    height: 2px;
+    background: green;
+    transform-origin: right center;
+    transform: rotate(0deg);
+    left: 8%;
+    border-radius: 2px;
+	text-shadow: 0 10px 20% 10%	 black;
+        }
+
+
+      
+        #innerclock{
+			
+	box-shadow: 20px,30px,10%,30%,gray;		
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(159, 130, 216,0.5);
+    position: relative;
+    display: inline-block;
+    left: 7%;
+    top: 7%;
+    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+        }
+
+		 #innerclock2{
+		
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(211, 198, 198, 0.6);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    top: 50%;
+  transform: translate(-50%,-50%);
+        
+		}
+		
+		 #innerclock3{
+		
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: rgba(215, 203, 238, 0.8);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    top: -18%;
+  transform: translate(-50%,-50%);
+        
+		}
+		
+		
+
+	.suji03,.suji12,.suji06,.suji09{
+		
+			color: #F9F9F9; font-size: 20px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-style: normal; font-weight: bold
+		}
+		
+		
+
+      .suji12{
+		  margin: auto;
+		  display: inline-block;
+		  position:absolute;
+		  left: 46%;
+		  top: 4%;  
+		  animation: jump 1s ease-in-out 5;
+			 animation-delay: 2.3s;
+        }
+		
+		.suji03{
+    margin: auto;
+    display: inline-block;
+    position: absolute;
+    left: 87%;
+    top: 45%;
+    font-size: 21px;
+			animation: jump 1s ease-in-out 5;
+			 animation-delay: 0.5s;
+        }
+		
+		.suji06{
+    margin: auto;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 86%;
+    font-size: 21px;
+			animation: jump 1s ease-in-out 5;
+			 animation-delay: 1.1s;
+        }
+		
+		.suji09{
+    margin: auto;
+    display: inline-block;
+    position: absolute;
+    left: 8%;
+    top: 46%;
+    font-size: 21px;
+			animation: jump 1s ease-in-out 5;
+			 animation-delay: 1.7s;
+        }
+
+		
+	.unit01{
+    margin: auto;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    transform: rotate(120deg) translateY(110px);
+    left: 101%;
+    top: 32%;
+	background: yellow;
+			}	
+		
+		.unit01::after{
+			content: "▽";
+			color: red;
+			display: inline-block;
+			position: relative;
+			width: 0.3px;
+			height: 0.3px;
+			right: 45px;
+			top: 5px;
+			transform:rotate(-30deg);
+			animation: jump 1s ease-in-out 5;
+			 animation-delay: 0.1s;
+		}
+		
+		.unit02{
+	 margin: auto;
+		border-radius: 50%;
+		width: 10px;
+		height: 10px;
+    display: inline-block;
+    position: absolute;
+	transform: rotate(150deg) translateY(110px);
+		left: 101%;
+		  top: 62%;  
+		background: white;
+			}
+		
+		.unit02::after{
+			content: "▽";
+			color: red;
+			display: inline-block;
+			position: relative;
+			width: 0.3px;
+			height: 0.3px;
+			right: 53px;
+			top: 4px;
+			transform:rotate(-30deg);
+		animation: jump 1s ease-in-out 5;
+			animation-delay: 0.3s;
+		}
+		.unit04{
+	 margin: auto;
+		border-radius: 50%;
+		width: 10px;
+		height: 10px;
+    display: inline-block;
+    position: absolute;
+	transform: rotate(210deg) translateY(110px);
+		left: 65%;
+		  top: 98%;  
+		background: orange;
+		6}
+		
+		.unit04::after{
+			content: "▽";
+			color: red;
+			display: inline-block;
+			position: relative;
+			width: 0.3px;
+			height: 0.3px;
+			right: 35px;
+			top:5px;
+			transform:rotate(90deg);
+		animation: jump 1s ease-in-out 5;
+		animation-delay: 0.7s;}
+		
+		
+	.unit05{
+	 margin: auto;
+		border-radius: 50%;
+		width: 10px;
+		height: 10px;
+    display: inline-block;
+    position: absolute;
+	transform: rotate(210deg) translateY(110px);
+		left: 52%;
+		  top: 113%;  
+		background: pink;
+}	
+		.unit05::after{
+			content: "▽";
+			color: red;
+			display: inline-block;
+			position: relative;
+			width: 0.3px;
+			height: 0.3px;
+			right: 30px;
+			top: -20px;
+			transform:rotate(110deg);
+		animation: jump 1s ease-in-out 5;
+		animation-delay: 0.9s;}
+		
+		
+		.unit07{
+	 margin: auto;
+		border-radius: 50%;
+		width: 10px;
+		height: 10px;
+    display: inline-block;
+    position: absolute;
+	transform: rotate(210deg) translateY(110px);
+		left: 12%;
+		  top: 114%;  
+		background: #058630;
+}	
+		
+		.unit07::after{
+			content: "▽";
+			color: red;
+			display: inline-block;
+			position: relative;
+			width: 0.3px;
+			height: 0.3px;
+			left: 18px;
+			top: -40px;
+			transform:rotate(180deg);
+		animation: jump 1s ease-in-out 5;
+		animation-delay: 1.3s;}
+		
+			.unit08{
+	 margin: auto;
+		border-radius: 50%;
+		width: 10px;
+		height: 10px;
+    display: inline-block;
+    position: absolute;
+	transform: rotate(210deg) translateY(110px);
+		left: -3%;
+		  top: 100%;  
+		background: #802A2A;
+			}
+		.unit08::after{
+			content: "▽";
+			color: red;
+			display: inline-block;
+			position: relative;
+			width: 0.3px;
+			height: 0.3px;
+			left: 24px;
+			top: -40px;
+			transform:rotate(200deg);
+		animation: jump 1s ease-in-out 5;
+		animation-delay: 1.5s;}
+		
+		
+		
+		.unit10{
+	 margin: auto;
+		border-radius: 50%;
+		width: 10px;
+		height: 10px;
+    display: inline-block;
+    position: absolute;
+	transform: rotate(150deg) translateY(110px);
+		left: 33%;
+		  top: 62%;  
+		background: black;
+			}	
+		.unit10::after{
+			content: "▽";
+			color: red;
+			display: inline-block;
+			position: relative;
+			width: 0.3px;
+			height: 0.3px;
+			left: 20px;
+			top: 42px;
+			transform:rotate(-30deg);
+		animation: jump 1s ease-in-out 5;
+		animation-delay: 1.9s;}
+		.unit11{
+    margin: auto;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    transform: rotate(120deg) translateY(110px);
+    left: 58%;
+    top: 32%;
+	background: #0B0B66}
+		
+		.unit11::after{
+			content: "▽";
+			color: red;
+			display: inline-block;
+			position: relative;
+			width: 0.3px;
+			height: 0.3px;
+			right: 16px;
+			top: 30px;
+			transform:rotate(30deg);
+		animation: jump 1s ease-in-out 5;
+		animation-delay: 2.1s;}
+		
+		
+		 @keyframes jump {
+        0% {
+         color:red ;
+        }
+        
+        100% {
+          color:yellow;
+        }
+      }
+		
+    </style>
+</head>
+<body>
+<div id="clock0">
+  
+  <div id="innerclock">
+	  <div id="innerclock2"></div>
+	  <div id="innerclock3"></div>
+    <div class="suji12">12</div>
+    <div class="suji03">3</div>
+    <div class="suji06">6</div>
+    <div class="suji09">9</div>
+	  <div class="unit01"></div>
+	  <div class="unit02"></div>
+	   <div class="unit04"></div>
+	   <div class="unit05"></div>
+	  <div class="unit07"></div>
+	  <div class="unit08"></div>
+	  <div class="unit10"></div>
+	  <div class="unit11"></div>
+<div id="ten"></div>
+	  <div id="ten2"></div>
+        <div id="hour"></div>
+        <div id="minute"></div>
+            <div id="second"></div>
+                
+                
+
+            
+        
+    </div>
+</div>
+<script>
+const hour=document.getElementById("hour");
+const minute=document.getElementById("minute");
+const sec=document.getElementById("second");
+
+
+const setDay=()=>{
+    let d=new Date();
+    let h=d.getHours();
+    let m=d.getMinutes();
+    let s=d.getSeconds();
+	let s2=d.getSeconds();
+    hour.style.transform=`rotate(${h*30+90}deg)`;
+    minute.style.transform=`rotate(${m*6+90}deg)`;
+    sec.style.transform = `rotate( ${s*6+90}deg )`;
+	
+}
+  setInterval(setDay,1000);
+  setDay();
+
+ 
+
+
+</script>
+
+</body>
+</html>
+</body>
+</html>
